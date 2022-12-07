@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function getComputerChoice() {
+            let number = Math.floor(Math.random() * 3); 
+            if (number === 0) {
+                return "ROCK";
+            } else if (number === 1) {
+                return "SCISSORS";
+            } else {
+                return 'PAPER'
+            }
+        }
+
+       
+        
+ 
+       
+       
+        let score = 0;  
+
+        function playRound(playerSelection, computerSelection) {
+            
+            if (playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'SCISSORS' || playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'PAPER' || playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'ROCK' ) {
+                score++;
+                return `You win this round! You're score is ${score} out of 5`;
+                
+            } else if (playerSelection.toUpperCase() === computerSelection) {
+                return `A tie this round!!!! Your score is ${score} out of 5`;
+                
+            } else {
+                return `you loose the round hahaha your score is ${score} out of 5`;
+                
+            } 
+
+           
+     }
+
+     
+    
+
+       
+
+      
+
+      
+
+      function game() {
+        let playerSelection = prompt('Rock, Paper or Scissors?');
+        let computerSelection = getComputerChoice(); 
+        return (playRound(playerSelection, computerSelection));
+       
+       
+        
+        
+      }
+
+     // console.log(game());
+
+     for (i = 0; i < 5; i++) {
+        
+        
+
+        console.log(game());
+    
+     }
+
+     if (score >= 3) {
+            console.log('You Have Won!!!');
+        } else {
+           console.log('You Lost :(');
+        }
+
+     
+      
+     
+     
+
+     
+      
+
+       
+        
+     
+
+      
+
+
+
+    </script>
+    
+    
+</body>
+</html>
